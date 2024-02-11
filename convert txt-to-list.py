@@ -38,7 +38,7 @@ def Split_by_num(lst):
            lst.split()[0]
             
             
-print(Split_by_num(clean_ club))
+print(Split_by_num(clean_club))
     
     
         
