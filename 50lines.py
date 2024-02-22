@@ -77,3 +77,42 @@ filter_try = filter(filter_func, sortedList)
 print(list(filter_try))
 #filter_listcomprehension = [x for  x in sortedList if x[0] + x[1] % 2 == 0]
 #print(filter_listcomprehension)
+
+from functools import reduce
+reduce_list=[1,2,3,4]
+print(reduce(lambda x,y: x*y,reduce_list))
+
+#Error and exception
+myException = 4
+assert(myException <= 4),"Value is smaller than 4"
+try:
+    myException /0
+    myException + "a"
+except ZeroDivisionError as e:
+    print(e)
+except TypeError as e:
+    print(e)
+#if no exceptions occur
+else:
+    print("Everything is fine")
+
+#finally the clause to usually clean
+finally:
+    print("cleaning up...")
+
+# using class for exception and eeror catching 
+class ValueTooHigh(Exception):
+    pass
+class ValueTooLow(Exception):
+    def __init__(self, message, value):
+        self.message = message
+        self.value = value
+def valueCheck(x):
+    if x > 100: raise  ValueTooHigh("Value is greater than 20")
+    if x < 70: raise ValueTooLow("value is too low", x)
+try:
+    valueCheck(200)
+except ValueTooHigh as e:
+    print(e)
+except ValueTooLow as e:
+    print(e.message, e.value)
