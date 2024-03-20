@@ -116,3 +116,24 @@ except ValueTooHigh as e:
     print(e)
 except ValueTooLow as e:
     print(e.message, e.value)
+
+# inheritance in class
+
+class parent:
+    def func1():
+        print('Hello')
+        return 8
+class  heir(parent):
+    def func2():
+        print("whats up")
+
+myHeir = heir()
+print(heir.func1())
+# we can run an on related or unrelated class in a method
+class unrelatedClass():
+    def testing():
+        print("Sup")
+def unrelatedFunc():
+    if 1: unrelatedClass.testing()
+unrelatedFunc()
+    
